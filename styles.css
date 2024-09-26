@@ -5,9 +5,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0e6d2;
     padding: 20px;
+    background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
 }
 
 header {
@@ -16,34 +17,102 @@ header {
 }
 
 h1 {
-    color: #333;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px #aaa;
+    font-family: 'Playfair Display', serif;
+    color: #4a4a4a;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px #d1c4a8;
+}
+
+.bookcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
 }
 
 .shelf {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
     padding: 20px;
+    background-color: #8b4513;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.shelf::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background-color: #a0522d;
+    border-radius: 10px 10px 0 0;
 }
 
 .book {
-    width: 150px;
-    height: 200px;
-    background-color: #ff6b6b;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    width: 120px;
+    height: 180px;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    border-radius: 5px 15px 15px 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -2px 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white;
     cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.book span {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    padding: 10px;
+    font-weight: bold;
 }
 
 .book:hover {
-    transform: scale(1.1);
-    background-color: #ff4040;
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3), -3px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.book::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .book {
+        width: 100px;
+        height: 150px;
+        font-size: 0.9rem;
+    }
+
+    .shelf {
+        gap: 20px;
+        padding: 15px;
+    }
+
+    body {
+        padding: 10px;
+    }
 }
