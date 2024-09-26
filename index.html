@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Book Shelf</title>
+    <title>Enchanted PDF Library</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>My Book Shelf</h1>
+        <h1>Enchanted PDF Library</h1>
     </header>
-    
-    <div class="shelf">
-        <div class="book" onclick="openPDF('pdf1.pdf')">PDF 1</div>
-        <div class="book" onclick="openPDF('pdf2.pdf')">PDF 2</div>
-        <div class="book" onclick="openPDF('pdf3.pdf')">PDF 3</div>
-        <div class="book" onclick="openPDF('pdf4.pdf')">PDF 4</div>
+
+    <div class="bookcase">
+        <div class="shelf">
+            <div class="book" onclick="openPDF('pdf1.pdf')"><span>Magical Theories</span></div>
+            <div class="book" onclick="openPDF('pdf2.pdf')"><span>Potion Recipes</span></div>
+            <div class="book" onclick="openPDF('pdf3.pdf')"><span>Spell Casting</span></div>
+            <div class="book" onclick="openPDF('pdf4.pdf')"><span>Herbology</span></div>
+        </div>
+        <div class="shelf">
+            <div class="book" onclick="openPDF('pdf5.pdf')"><span>Divination</span></div>
+            <div class="book" onclick="openPDF('pdf6.pdf')"><span>Runes</span></div>
+            <div class="book" onclick="openPDF('pdf7.pdf')"><span>Charms</span></div>
+            <div class="book" onclick="openPDF('pdf8.pdf')"><span>Transfiguration</span></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
